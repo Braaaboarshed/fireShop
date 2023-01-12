@@ -1,0 +1,12 @@
+
+.badge{
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    position: absolute;
+    top: -3px;
+    right: -7px;
+}
+.cart{
+    position: relative;
+}

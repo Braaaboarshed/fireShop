@@ -1,0 +1,31 @@
+<div class="cartBox">
+    <h1 class="text-danger">Shopping Cart</h1>
+  <div class="headCart">
+    <p class="lead">You have <label class="text-danger ">{{cartProducts.length}}</label> item in your cart</p>
+    <button class="btn btn-danger" (click)="clearCart()">Clear all items</button>
+  </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cartProducts; let index = index" >
+                <td></td>
+                <td>{{item.title}}</td>
+                <td>{{item.price}} L.E</td>
+                <td><button class="btn btn-danger" (click)="deleteProduct(index)">Delete</button></td>
+
+                </tr>
+                <tr class="total">
+                    <td></td>
+                    <td ><h2>total :</h2></td>
+                    <td>{{total}} L.E</td>
+                    <td></td>
+                </tr>
+        </tbody>
+                

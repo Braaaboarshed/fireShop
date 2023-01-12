@@ -1,0 +1,38 @@
+<div class="body">
+    <div class="margin"></div>
+  
+    <div class="keys" >
+      <h3>
+      
+       <p>use</p> atuny0 <p>for username</p>
+      </h3>
+        <br>
+        <h3>
+        <p>use</p> 9uQFF1Lh <p>for password</p>
+      </h3>
+    
+  
+    </div>
+    <div class="container">
+  
+      <h1>login</h1>
+      <form [formGroup]="loginForm">
+        <mat-form-field appearance="outline" >
+            <mat-label>username</mat-label>
+            <input matInput   placeholder="username" formControlName = 'username'>
+            <mat-error>required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>password</mat-label>
+          <input matInput   placeholder="password" formControlName = 'password'>
+          <mat-error>required</mat-error>
+        </mat-form-field>
+        <button   mat-raised-button color="primary" [disabled]="loginForm.invalid" (click)="login()">Login</button>
+    
+  
+    </form>
+  
+  </div>
+  <div class="d-flex justify-content-center" *ngIf="loader" >
+  </div>
+  </div>

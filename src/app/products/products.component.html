@@ -1,0 +1,41 @@
+
+<div class="row">
+    
+    <div class="col-3">
+        <h1>categories</h1>
+
+        <div class="list-group"  >
+            <a class="list-group-item list-group-item-action"  (click)="getAllProducts()" routerLink="/"> All Product</a>
+            <a
+            *ngFor="let c of categories"
+             class="list-group-item list-group-item-action" 
+             [class.active]="category ==c "
+             routerLink='/'
+             [queryParams]="{category:c}"
+             >    
+
+                {{c}}
+            </a>
+        </div>
+    </div>
+    <div class="col">
+        <div class="col">
+            <div class="row">
+          
+                <ng-container *ngFor="let item of products">
+                    <div class="card m-3" style="width: 15rem ; ">
+                        <div class="card-body">
+                          <h2 class="card-title">{{item.title}}</h2>
+                          <h4 class="card-text">price :{{item.price}}$</h4>
+                          <h4 class="card-text">Brand: {{item.brand}}</h4>
+                          <h4 class="card-text">Rate: {{item.rating}}</h4>
+                          <a  class="btn btn-primary" (click)="addToCart(item)" >Add to cart</a>
+                          
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+

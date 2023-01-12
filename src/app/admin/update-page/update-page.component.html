@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-sm">
+        <form  #f="ngForm" (ngSubmit)="save(f.value)" >
+           <div class="form-group">
+               <label for="title">title</label>
+               <input [(ngModel)]="product.title" name="title" #title="ngModel" type="text" class="form-control" required>
+               <div class="alert alert-danger" *ngIf="title.invalid && title.touched " >
+                   Please enter a valid title
+               </div>
+           </div>
+       
+           <div class="form-group">
+               <label for="price">price</label>
+               <input [(ngModel)]="product.price"  name="price" #price="ngModel" type="text" class="form-control "  required  >
+               <div class="alert alert-danger" *ngIf="price.touched && price.invalid" >
+                   Please enter a valid price
+               </div>
+           </div>
+       
+           <div class="form-group">
+               <label for="category">category</label>
+               <select [(ngModel)]="product.category"  name="category"  id="category"  class="form-control form-select " required  #category="ngModel">
+                   
+                   <option  *ngFor="let c of categories ">{{c}}</option>
+                 
+       
+               </select>
+               <div class="alert alert-danger" *ngIf="category.touched && category.invalid" >
+                   Please enter a valid category
+               </div>
+       
+           </div>
+       
+           <div class="form-group">
+               <label for="imageUrl">imageUrl</label>
+               <input  [(ngModel)]="product.images[1]"  #imageUrl="ngModel"   type="text" name="imageUrl" class="form-control">
+               <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid" >
+                   Please enter a valid imageUrl
+               </div>
+           </div>
+           <button class="btn btn-primary " type="submit" [disabled]="f.invalid "  (click)="updateProduct()">Save</button>
+
+       </form>
+    </div>
+    <div class="col-sm">
+        <div class="card" >
+            <img   src="https://static.vecteezy.com/system/resources/thumbnails/004/141/669/small/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg" alt="">
+            <div class="card-body">
+              <h2 class="card-title">The title: {{title.value}}</h2>
+              <h2 class="card-text">The price : {{price.value}}</h2>
+            </div>
+   
+    </div> 
+ 
+ 

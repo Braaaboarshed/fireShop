@@ -1,0 +1,14 @@
+
+
+.form-group{
+    padding: 25px;
+}
+
+.form-group label{
+    color: #000;
+    font-size: 20px
+}
+.form-group .form-control{
+
+    border: 1px solid rgb(135, 132, 132)
+}
